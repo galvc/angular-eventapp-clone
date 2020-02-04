@@ -11,13 +11,15 @@ const httpOptions = {
 })
 export class EventsService {
 
+  constructor(private http: HttpClient) { }
+
   getAllEvents() {
     // return this.http.get('https://samplewebappi.azurewebsites.net/api/todoitems');
     return this.http.get('assets/mock-events.json')
   }
 
-  constructor(private http: HttpClient) { }
-
-
+  getEvent(eventId){
+    
+  }
 
 }

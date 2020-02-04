@@ -7,13 +7,13 @@ import { e}
   styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
-  id: string;
+  id: number;
 
   constructor(private route:ActivatedRoute) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.id = params.get("eventId");
+      this.id = +params.get("eventId");
     })
     console.log(this.id)
   }
