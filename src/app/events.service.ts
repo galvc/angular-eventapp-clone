@@ -12,6 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class EventsService {
+  order;
 
   constructor(private http: HttpClient) { }
 
@@ -20,5 +21,7 @@ export class EventsService {
     return this.http.get('assets/mock-events.json');
   }
 
+  addToOrder(id, price, quantity) {
 
+  }
 }

@@ -19,3 +19,4 @@
 [ ] service: getEvent(id) for event details
 [ ] move back to http api
 [ ] check for ticket quantity & allowing for more than one tix purchase
+[ ] purchase button disabled until dropdown has changed
