@@ -11,8 +11,14 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
+
 export class EventsService {
-  order;
+  order = {
+    "event": null,
+    "quantity": null,
+    "total": null,
+    "customer": null
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +27,10 @@ export class EventsService {
     return this.http.get('assets/mock-events.json');
   }
 
-  addToOrder(id, price, quantity) {
+  addToOrder(event, quantity) {
+    this.order.event = event;
+    this.order.quantity = quantity;
+    console.log('thsi is the order frm services ' + this.order.quantity);
 
   }
 }

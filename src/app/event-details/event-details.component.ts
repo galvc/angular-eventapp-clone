@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { EventsService } from '../events.service';
 import { eventList } from '../mock-events';
-
+import { Event } from '../event';
 @Component({
   selector: 'app-event-details',
   templateUrl: './event-details.component.html',
@@ -10,6 +10,7 @@ import { eventList } from '../mock-events';
 })
 export class EventDetailsComponent implements OnInit {
   event;
+  quantity: number;
   dropdownText: string = "Choose # of Tickets";
   purchaseBtnDisplay: boolean = false;
   
@@ -27,10 +28,12 @@ export class EventDetailsComponent implements OnInit {
   // allows for the purchase button to be selected
   handleDropdown(quantity){
     this.dropdownText = `${quantity} ticket(s): \$${this.event.price * quantity}`;
-    this.purchaseBtnDisplay = !this.purchaseBtnDisplay;
+    this.quantity = quantity;
+    this.purchaseBtnDisplay = !this.purchaseBtnDisplay; //gets disabled when changed again..
   }
 
-  handlePurchase(id: number, price: number, quantity: number) {
-
+  handlePurchase() {
+    this.eventsService.addToOrder(this.event, this.quantity);
+    console.log('purchase triggered');
   }
 }

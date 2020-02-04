@@ -21,7 +21,7 @@
             <li nz-menu-item *ngFor="let quantity of [1,2,3]" (click)="handleDropdown(quantity)">{{ quantity }} ticket(s): {{ event.price * quantity | currency }}</li>
 					</ul>
 				</nz-dropdown-menu>
-				<button nz-button nzType="primary" [nzSize]="size" [disabled]="!purchaseBtnDisplay">Purchase Tickets</button>
+				<button nz-button nzType="primary" [nzSize]="size" [disabled]="!purchaseBtnDisplay" (click)="handlePurchase(quantity)">Purchase Tickets</button>
 			</div>
 		</div>
 
