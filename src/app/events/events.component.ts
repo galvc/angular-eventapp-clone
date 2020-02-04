@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
+import { eventList } from '../mock-events';
 import { EventsService } from "../events.service";
 
 @Component({
@@ -8,21 +9,21 @@ import { EventsService } from "../events.service";
   styleUrls: ["./events.component.css"]
 })
 export class EventsComponent implements OnInit {
-  events;
+  events = eventList;
 
   constructor(private eventsService: EventsService) {}
 
   ngOnInit() {
     // this.events = this.eventsService.getAllEvents();
     // console.log(this.events);
-    this.getFoods();
+    // this.getFoods();
   }
 
-  getFoods() {
-   this.eventsService.getAllEvents().subscribe(
-      data => { this.events = data},
-      err => console.error(err),
-      () => console.log('done loading foods')
-    );
-  }
+  // getFoods() {
+  //  this.eventsService.getAllEvents().subscribe(
+  //     data => { this.events = data},
+  //     err => console.error(err),
+  //     () => console.log('done loading foods')
+  //   );
+  // }
 }

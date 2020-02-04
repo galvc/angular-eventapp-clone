@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
-import { e}
 @Component({
   selector: 'app-event-details',
   templateUrl: './event-details.component.html',
