@@ -16,12 +16,13 @@ import { EventsComponent } from './events/events.component';
 import { EventBoxComponent } from './event-box/event-box.component';
 import { EventsService } from './events.service';
 import { EventDetailsComponent } from './event-details/event-details.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpClientModule, AppRoutingModule, BrowserAnimationsModule,
     /** import ng-zorro-antd root module，you should import NgZorroAntdModule and avoid importing sub modules directly **/
     NgZorroAntdModule ],
-  declarations: [ AppComponent, HelloComponent, EventsComponent, EventBoxComponent, EventDetailsComponent ],
+  declarations: [ AppComponent, HelloComponent, EventsComponent, EventBoxComponent, EventDetailsComponent, CheckoutComponent ],
   bootstrap:    [ AppComponent ],
   providers: [EventsService, {provide: NZ_I18N, useValue: en_US}]
 })

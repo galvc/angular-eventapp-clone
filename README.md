@@ -5,7 +5,7 @@
 #status
 - use navigation parameter to get eventid info for event-details component
 - i moved away from http get because i dont have the ability to get a single object from the json file
-
+- using routerlink and click at the same time; use this in the click method this.router.navigate(['/page']);
 
 #todos
 [ ] add price
