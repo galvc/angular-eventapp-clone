@@ -1,5 +1,6 @@
 #status
 - use navigation parameter to get eventid info for event-details component
+- i moved away from http get because i dont have the ability to get a single object from the json file
 
 
 #todos
@@ -12,3 +13,4 @@
 [ ] bonus: add cart
 [ ] bonus: add an admin page
 [ ] service: getEvent(id) for event details
+[ ] move back to http api

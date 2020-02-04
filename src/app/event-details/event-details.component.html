@@ -1,0 +1,25 @@
+<div nz-row class="detail__header">
+	<div nz-col nzSpan="16">
+		<img class="detail__header__cover" alt="example" src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" />
+  </div>
+		<div nz-col nzSpan="8'">
+			{{ event.title }}
+			<br />
+        price goes here
+  </div>
+		</div>
+
+		<div nz-row class="detail__ticket">
+			<div nz-col nzSpan="24">
+    <button nz-button nzType="primary" [nzSize]="size">Download</button>
+			</div>
+		</div>
+
+		<div nz-row class="detail__info">
+			<div nz-col nzSpan="16">
+				{{ event. description }}
+			</div>
+			<div nz-col nzSpan="8">
+				{{ event.location }}
+			</div>
+		</div>

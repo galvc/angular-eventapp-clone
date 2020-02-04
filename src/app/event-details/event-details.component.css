@@ -1,0 +1,23 @@
+.detail__header {
+  background: #ebebeb;
+  
+}
+
+.detail__header__cover {
+  object-fit: cover;
+  width: 100%;
+  height: 20em;
+}
+
+.detail__ticket {
+  background: #DBDAE3;
+}
+
+.detail__ticket button {
+  float: right;
+}
+
+.detail__info {
+  background: #DBDAE3;
+  border: 1px solid black;
+}
