@@ -5,19 +5,29 @@
 		<div nz-col nzSpan="8'">
 			{{ event.title }}
 			<br />
-        price goes here
+        {{ event.price | currency }}
   </div>
 		</div>
 
 		<div nz-row class="detail__ticket">
 			<div nz-col nzSpan="24">
-    <button nz-button nzType="primary" [nzSize]="size">Download</button>
+				<button nz-button nz-dropdown [nzDropdownMenu]="ticketDropdown">
+        Choose # of Tickets
+          <i nz-icon nzType="down"></i>
+        </button>
+        <!-- only show this if event allows for more than one ticket -->
+				<nz-dropdown-menu #ticketDropdown="nzDropdownMenu">
+					<ul nz-menu>
+            <li nz-menu-item *ngFor="let quantity of [1,2,3]">{{ 1 * quantity }} ticket(s): {{ event.price * quantity | currency }}</li>
+					</ul>
+				</nz-dropdown-menu>
+				<button nz-button nzType="primary" [nzSize]="size">Purchase Tickets</button>
 			</div>
 		</div>
 
 		<div nz-row class="detail__info">
 			<div nz-col nzSpan="16">
-				{{ event. description }}
+				{{ event.description }}
 			</div>
 			<div nz-col nzSpan="8">
 				{{ event.location }}

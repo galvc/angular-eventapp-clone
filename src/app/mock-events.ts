@@ -4,6 +4,7 @@ export const eventList = [
     "title": "ConveyUX",
     "date": "01-20-2020",
     "time": "2:00pm",
+    "price": 20.00,
     "description": "A UX conference",
     "location": "Space Needle",
     "organizers": [
@@ -16,6 +17,7 @@ export const eventList = [
     "title": "Valentines Dinner",
     "date": "02-14-2020",
     "time": "2:00pm",
+    "price": 20.00,
     "description": "Come join us for a sweet dinner",
     "location": "Some Bar",
     "organizers": [
@@ -28,6 +30,7 @@ export const eventList = [
     "title": "Valentines Dinner",
     "date": "02-14-2020",
     "time": "2:00pm",
+    "price": 20.00,
     "description": "Come join us for a sweet dinner",
     "location": "Some Bar",
     "organizers": [
@@ -40,6 +43,7 @@ export const eventList = [
     "title": "Valentines Dinner",
     "date": "02-14-2020",
     "time": "2:00pm",
+    "price": 20.00,
     "description": "Come join us for a sweet dinner",
     "location": "Some Bar",
     "organizers": [

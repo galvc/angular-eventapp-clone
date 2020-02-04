@@ -11,10 +11,12 @@
 
 .detail__ticket {
   background: #DBDAE3;
+  /* float: right; */
+  height: 4em;
 }
 
 .detail__ticket button {
-  float: right;
+  
 }
 
 .detail__info {
