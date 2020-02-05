@@ -6,6 +6,24 @@
 - use navigation parameter to get eventid info for event-details component
 - i moved away from http get because i dont have the ability to get a single object from the json file
 - using routerlink and click at the same time; use this in the click method this.router.navigate(['/page']);
+- there are different ways to submit a form -> submitting two forms with one submit
+https://stackoverflow.com/questions/43248849/angular2-cant-bind-to-formgroup-since-it-isnt-a-known-property-of-form/53820734
+i still need to reread this to understand
+but for now i used an onclick instead of an onsubmit since the button is outside of the form codes
+
+
+#notes
+FormControl - access to listen update validate form inputs
+- associate with a form item and bind it, ex. [formControl]="x"
+- in a form group, it is not bound, ex. formControlName="x"
+
+To display value - use AsyncPipe(?) or subscribe to it
+valueChanges is an observable?
+
+FormGroup - has form controls, tracks the form state
+has value, untoucked(?), set value
+- returns an object of all the form field values
+
 
 #todos
 [x] add price

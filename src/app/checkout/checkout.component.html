@@ -3,34 +3,33 @@
 		<h1>Checkout</h1>
 		<h2>Customer Information</h2>
 
-		<form nz-form>
+		<form nz-form [formGroup]="customerInformation">
 			<nz-form-item>
 				<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Name</nz-form-label>
 				<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid name!">
-					<input nz-input id="name" />
+					<input nz-input id="name" formControlName="name" />
         </nz-form-control>
 			</nz-form-item>
 			<nz-form-item>
 				<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">Email</nz-form-label>
 				<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
-					<input nz-input id="email" />
+					<input nz-input id="email" formControlName="email" />
         </nz-form-control>
 			</nz-form-item>
 			<nz-form-item>
 				<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="address">Address</nz-form-label>
 				<nz-form-control [nzSm]="14" [nzXs]="24">
-					<input nz-input id="address" />
+					<input nz-input id="address" formControlName="address" />
         </nz-form-control>
 			</nz-form-item>
 		</form>
 
 		<h2>Payment Information</h2>
-
-		<form nz-form>
+		<form nz-form [formGroup]="paymentInformation">
 			<nz-form-item>
 				<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="creditcard">Card Information</nz-form-label>
 				<nz-form-control [nzSm]="14" [nzXs]="24">
-					<input nz-input id="creditcard" />
+					<input nz-input id="creditcard" formControlName="creditCardInformation" />
         </nz-form-control>
 			</nz-form-item>
 
@@ -39,21 +38,21 @@
 					<nz-col [nzSpan]="12">
 						<nz-form-label [nzSm]="6" [nzXs]="12" nzFor="cc-expirationdate">Expiration Date</nz-form-label>
 						<nz-form-control [nzSm]="4" [nzXs]="4">
-							<input nz-input id="cc-expirationdate" />
+							<input nz-input id="cc-expirationdate" formControlName="expirationName" />
         </nz-form-control>
 					</nz-col>
 
 					<nz-col [nzSpan]="12">
 						<nz-form-label [nzSm]="6" [nzXs]="12" nzFor="cc-pin">Pin Code</nz-form-label>
 						<nz-form-control [nzSm]="4" [nzXs]="4">
-							<input nz-input id="cc-pin" />
+							<input nz-input id="cc-pin" formControlName="pinCode" />
         </nz-form-control>
 					</nz-col>
 				</nz-row>
 			</nz-form-item>
-
 		</form>
 
+  <button (click)="handleSubmit(customerInformation.value)">Purchase</button>
 	</div>
 	<!-- <div nz-col nzSpan="12">col-12</div> -->
 </div>
