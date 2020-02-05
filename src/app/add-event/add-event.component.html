@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+	<label>Id</label>
+	<input type="text" placeholder="" formControlName="id"/>
+	<br/>
+	<label>Title</label>
+	<input type="text" placeholder="" formControlName="title"/>
+	<br/>
+	<label>Description</label>
+	<input type="text" placeholder="" formControlName="description" />
+	<br/>
+	<label>Date</label>
+	<input type="text" placeholder="" formControlName="date"/>
+	<br/>
+	<label>Time</label>
+	<input type="text" placeholder="" formControlName="time"/>
+	<br/>
+	<label>Price</label>
+	<input type="number" placeholder="" formControlName="price"/>
+	<br/>
+	<label>Quantity</label>
+	<input type="number" placeholder="" formControlName="quantity"/>
+	<br/>
+	<label>Location</label>
+	<input type="text" placeholder="" formControlName="location"/>
+	<br/>
+	<label>Organizers</label>
+	<input type="text" placeholder="" formControlName="organizers"/>
+	<button type="submit" (click)="handleSubmit()">Submit</button>
+</form>

@@ -19,11 +19,13 @@ export class EventsComponent implements OnInit {
     // console.log(this.events);
     // this.getFoods();
     this.getEvents();
+    
   }
 
   getEvents() {
     this.eventsService.getAllEvents()
     .subscribe(e => this.events = e);
+    console.log(JSON.stringify(this.events));
   }
 
 }
