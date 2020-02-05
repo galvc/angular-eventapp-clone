@@ -26,6 +26,7 @@ has value, untoucked(?), set value
 
 import reactiveformmodule to app.module
 
+-  //the collection name must be the same as the object i returned from the other service
 
 
 #todos

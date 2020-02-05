@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
 import { eventList } from '../mock-events';
+import { Event } from '../event';
 import { EventsService } from "../events.service";
 
 @Component({
@@ -9,7 +10,7 @@ import { EventsService } from "../events.service";
   styleUrls: ["./events.component.css"]
 })
 export class EventsComponent implements OnInit {
-  events = eventList;
+  events: Event[];
 
   constructor(private eventsService: EventsService) {}
 
@@ -17,13 +18,13 @@ export class EventsComponent implements OnInit {
     // this.events = this.eventsService.getAllEvents();
     // console.log(this.events);
     // this.getFoods();
+    this.getEvents();
   }
 
-  // getFoods() {
-  //  this.eventsService.getAllEvents().subscribe(
-  //     data => { this.events = data},
-  //     err => console.error(err),
-  //     () => console.log('done loading foods')
-  //   );
-  // }
+  getEvents() {
+    this.eventsService.getAllEvents()
+    .subscribe(e => this.events = e);
+    console.log('i am called')
+  }
+
 }
