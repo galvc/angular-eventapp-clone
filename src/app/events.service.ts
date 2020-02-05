@@ -17,8 +17,11 @@ export class EventsService {
     "event": null,
     "quantity": null,
     "total": null,
+    "fees": null,
     "customer": null
   }
+
+  fees: number = 0.10;
 
   constructor(private http: HttpClient) { }
 
@@ -30,7 +33,12 @@ export class EventsService {
   addToOrder(event, quantity) {
     this.order.event = event;
     this.order.quantity = quantity;
+    this.order.fees = event.price * quantity * this.fees;
+    this.order.total = event.price * quantity + this.order.fees;
     console.log('thsi is the order frm services ' + this.order.quantity);
+  }
 
+  getOrder() {
+    return this.order;
   }
 }

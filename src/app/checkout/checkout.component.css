@@ -1,0 +1,11 @@
+.checkout__sidebar {
+  background: red;
+  height: auto;
+  
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 20em;
+  background: #ebebeb;
+}

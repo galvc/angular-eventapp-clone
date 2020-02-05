@@ -1,10 +1,8 @@
 <div nz-row nzType="flex" nzJustify="center">
 	<ng-container *ngFor="let event of events; index as eventId">
-		<!-- <div nz-col nzSpan="6"> -->
 			<a [routerLink]="['/events', eventId]">
 				<app-event-box [event]="event">
 				</app-event-box>
 			</a>
-		<!-- </div> -->
 	</ng-container>
 </div>
