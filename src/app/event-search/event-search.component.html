@@ -3,6 +3,7 @@
 		<input
         #searchBox
         id="search-box"
+        [(ngModel)]="searchBox.value" 
         placeholder="Search for an event"
         nz-input
         (input)="search(searchBox.value)"
@@ -10,8 +11,8 @@
         nzSize="large"
       />
 		<nz-autocomplete nzBackfill #auto>
-			<nz-auto-option *ngFor="let event of events$ | async" [nzValue]="event">
-				<a routerLink="/events/{{event.id}}">
+			<nz-auto-option *ngFor="let event of events$ | async" [nzValue]="event.title">
+				<a routerLink="/events/{{event.id-1}}">
 					{{event.title}}
 				</a>
 			</nz-auto-option>
@@ -22,11 +23,9 @@
 
 
 
-<div id="search-component">
+<!-- <div id="search-component">
 	<h4><label for="search-box">Hero Search</label></h4>
-
 	<input #searchBox id="search-box" (input)="search(searchBox.value)" />
-
 	<ul class="search-result">
 		<li *ngFor="let event of events$ | async">
 			<a routerLink="/events/{{event.id}}">
@@ -34,4 +33,4 @@
 			</a>
 		</li>
 	</ul>
-</div>
+</div> -->

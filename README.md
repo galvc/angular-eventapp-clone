@@ -15,7 +15,8 @@ but for now i used an onclick instead of an onsubmit since the button is outside
 - moving into observables now woohoooo
 - hoping to implement a simple search bar so i know how to use filters
 - i wasnt able to get the online api out on time, so i will just simulate the server using inmemorydb
-
+- when searching user has to click on text itself
+- cannot search by title, input is useless unless you click on the actual text result 
 ## notes
 FormControl - access to listen update validate form inputs
 - associate with a form item and bind it, ex. - [formControl]="x"
@@ -35,7 +36,7 @@ import reactiveformmodule to app.module
 - A Subject is a special type of Observable that allows values to be multicasted to many Observers. Subjects are like EventEmitters.
 Every Subject is an Observable and an Observer. You can subscribe to a Subject, and you can call next to feed values as well as error and complete.
 https://rxjs-dev.firebaseapp.com/api/index/class/Subjects
-- 
+- the id of each evenr wil not match up to the array id, keep in mind esp for routerlinks
 
 #todos
 - [x] add price
@@ -53,4 +54,7 @@ https://rxjs-dev.firebaseapp.com/api/index/class/Subjects
 - [ ] confirm email input addition, comparing two input field validation
 - [ ] responsive webpage
 - [ ] update quantity when it is 'bought'
+- [x] search component
 - [x] add http methods
+- [ ] fix search: entire row should be clickable
+- [ ] fix search: search even without clicking the result
