@@ -30,6 +30,17 @@ export class EventsService {
     return this.http.get<Event[]>(this.eventsUrl);
   }
 
+  getEvent(id: number): Observable<Event> {
+    const url = `${this.eventsUrl}/${id}`;
+    return this.http.get<Event>(url);
+  }
+
+  updateEvent(event: Event): Observable<any> {
+    return this.http.put(this.eventsUrl, event, this.httpOptions);
+  }
+
+
+
   addToOrder(event, quantity) {
     this.order.event = event;
     this.order.quantity = quantity;
