@@ -18,11 +18,6 @@ export class CheckoutComponent implements OnInit {
     creditCardInformation: new FormControl('', Validators.required),
   })
 
-  // paymentInformation = new FormGroup({
-  //   creditCardInformation: new FormControl('', Validators.required),
-  //   expirationDate: new FormControl(''),
-  //   pinCode: new FormControl('')
-  // })
   constructor(private location:Location, private eventsService: EventsService) { }
 
   ngOnInit() {
