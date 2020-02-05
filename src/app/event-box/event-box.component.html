@@ -1,6 +1,6 @@
 <nz-card style="height: 300px;" [nzCover]="coverTemplate">
 	<span>{{ event.date | date:'E MMM d' }}</span>
-	<nz-card-meta nzTitle="{{ event.title }}" nzDescription="{{ event.description }}" [nzAvatar]="avatarTemplate">
+	<nz-card-meta nzTitle="{{ event.title }}" [nzAvatar]="avatarTemplate">
 	</nz-card-meta>
 	<span>{{ event.location }}</span>
 </nz-card>

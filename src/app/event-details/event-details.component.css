@@ -1,6 +1,15 @@
 .detail__header {
-  background: #ebebeb;
-  
+  background: #FBFAF8;
+}
+
+.detail__title {
+  padding: 1em;
+  height: 20em;
+}
+
+.display__price {
+  position: absolute;
+  bottom: 10px;
 }
 
 .detail__header__cover {
@@ -10,12 +19,21 @@
 }
 
 .detail__ticket {
-  background: #DBDAE3;
-  /* float: right; */
+  background: #fff;
   height: 4em;
+  border-bottom: 1px solid #E5E4E2;
+}
+
+.detail__ticket button {
+  margin: 0.50em;
+  float: right;
 }
 
 .detail__info {
-  background: #DBDAE3;
-  border: 1px solid black;
+  background: #fff;
+}
+
+.detail__info > div {
+  padding: 2em;
+  box-sizing: border-box;
 }

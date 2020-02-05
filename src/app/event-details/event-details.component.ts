@@ -33,7 +33,9 @@ export class EventDetailsComponent implements OnInit {
     this.dropdownText = `${quantity} ticket(s): \$${this.event.price *
       quantity}`;
     this.quantity = quantity;
-    this.purchaseBtnDisplay = !this.purchaseBtnDisplay; //gets disabled when changed again..
+    if(this.purchaseBtnDisplay === false){
+      this.purchaseBtnDisplay = !this.purchaseBtnDisplay;
+    }
   }
 
   handlePurchase() {
