@@ -9,7 +9,7 @@ import { Event } from "../event";
   styleUrls: ["./event-details.component.css"]
 })
 export class EventDetailsComponent implements OnInit {
-  event;
+  event: Event;
   quantity: number;
   dropdownText: string = "Choose # of Tickets";
   purchaseBtnDisplay: boolean = false;
@@ -21,10 +21,20 @@ export class EventDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    // this.route.paramMap.subscribe(params => {
+    //   this.event = eventList[+params.get("eventId")];
+    // });
+    // console.log(this.event);
+    this.getEvent();
+  }
+
+  getEvent() {
+    let eventId;
     this.route.paramMap.subscribe(params => {
-      this.event = eventList[+params.get("eventId")];
+      eventId = +params.get("eventId");
     });
-    console.log(this.event);
+    this.eventsService.getEvent(eventId)
+    .subscribe(e => this.event = e);
   }
 
   // reflects the chosen quantity on the dropdown value
@@ -33,14 +43,14 @@ export class EventDetailsComponent implements OnInit {
     this.dropdownText = `${quantity} ticket(s): \$${this.event.price *
       quantity}`;
     this.quantity = quantity;
-    if(this.purchaseBtnDisplay === false){
+    if (this.purchaseBtnDisplay === false) {
       this.purchaseBtnDisplay = !this.purchaseBtnDisplay;
     }
   }
 
   handlePurchase() {
     this.eventsService.addToOrder(this.event, this.quantity);
-    this.router.navigate(['/checkout']);
+    this.router.navigate(["/checkout"]);
     console.log("purchase triggered");
   }
 }

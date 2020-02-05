@@ -10,7 +10,8 @@
 https://stackoverflow.com/questions/54141975/submit-two-reactive-forms-with-one-button-angular-2/54142153
 i still need to reread this to understand
 but for now i used an onclick instead of an onsubmit since the button is outside of the form codes
-
+- moving into observables now woohoooo
+- hoping to implement a simple search bar so i know how to use filters
 
 #notes
 FormControl - access to listen update validate form inputs
