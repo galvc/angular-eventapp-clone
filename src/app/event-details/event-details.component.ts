@@ -33,7 +33,7 @@ export class EventDetailsComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       eventId = +params.get("eventId");
     });
-    this.eventsService.getEvent(eventId)
+    this.eventsService.getEvent(eventId+1)
     .subscribe(e => this.event = e);
   }
 
