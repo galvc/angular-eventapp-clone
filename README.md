@@ -8,15 +8,16 @@
 - using routerlink and click at the same time; use this in the click method this.router.navigate(['/page']);
 
 #todos
-[ ] add price
+[x] add price
 [ ] add quantity
 [ ] checkout: form
-[ ] checkout: details
-[ ] add checkout page
+[x] checkout: details
+[x] add checkout page
 [ ] create and host the web api 
 [ ] bonus: add cart
 [ ] bonus: add an admin page
-[ ] service: getEvent(id) for event details
 [ ] move back to http api
 [ ] check for ticket quantity & allowing for more than one tix purchase
 [ ] purchase button disabled until dropdown has changed
+[ ] form validation 
+[ ] confirm email

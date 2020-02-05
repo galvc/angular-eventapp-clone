@@ -1,4 +1,59 @@
-    <div nz-row>
-      <div nz-col nzSpan="12">col-12</div>
-      <div nz-col nzSpan="12">col-12</div>
-    </div>
+<div nz-row>
+	<div nz-col nzSpan="24">
+		<h1>Checkout</h1>
+		<h2>Customer Information</h2>
+
+		<form nz-form>
+			<nz-form-item>
+				<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Name</nz-form-label>
+				<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid name!">
+					<input nz-input id="name" />
+        </nz-form-control>
+			</nz-form-item>
+			<nz-form-item>
+				<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">Email</nz-form-label>
+				<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
+					<input nz-input id="email" />
+        </nz-form-control>
+			</nz-form-item>
+			<nz-form-item>
+				<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="address">Address</nz-form-label>
+				<nz-form-control [nzSm]="14" [nzXs]="24">
+					<input nz-input id="address" />
+        </nz-form-control>
+			</nz-form-item>
+		</form>
+
+		<h2>Payment Information</h2>
+
+		<form nz-form>
+			<nz-form-item>
+				<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="creditcard">Card Information</nz-form-label>
+				<nz-form-control [nzSm]="14" [nzXs]="24">
+					<input nz-input id="creditcard" />
+        </nz-form-control>
+			</nz-form-item>
+
+			<nz-form-item>
+				<nz-row [nzGutter]="8">
+					<nz-col [nzSpan]="12">
+						<nz-form-label [nzSm]="6" [nzXs]="12" nzFor="cc-expirationdate">Expiration Date</nz-form-label>
+						<nz-form-control [nzSm]="4" [nzXs]="4">
+							<input nz-input id="cc-expirationdate" />
+        </nz-form-control>
+					</nz-col>
+
+					<nz-col [nzSpan]="12">
+						<nz-form-label [nzSm]="6" [nzXs]="12" nzFor="cc-pin">Pin Code</nz-form-label>
+						<nz-form-control [nzSm]="4" [nzXs]="4">
+							<input nz-input id="cc-pin" />
+        </nz-form-control>
+					</nz-col>
+				</nz-row>
+			</nz-form-item>
+
+		</form>
+
+	</div>
+	<!-- <div nz-col nzSpan="12">col-12</div> -->
+</div>
