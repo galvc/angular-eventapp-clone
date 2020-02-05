@@ -5,15 +5,15 @@
 
 		<form nz-form [formGroup]="customerInformation">
 			<nz-form-item>
-				<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="name">Name</nz-form-label>
-				<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid name!">
-					<input nz-input id="name" formControlName="name" />
+				<nz-form-label [nzSm]="0" [nzXs]="2" nzRequired nzFor="name">Name</nz-form-label>
+				<nz-form-control [nzSm]="12" [nzXs]="12" nzErrorTip="The input is not valid name!">
+					<input nz-input id="name" formControlName="name" required />
         </nz-form-control>
 			</nz-form-item>
 			<nz-form-item>
 				<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="email">Email</nz-form-label>
 				<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid E-mail!">
-					<input nz-input id="email" formControlName="email" />
+					<input nz-input id="email" formControlName="email" required />
         </nz-form-control>
 			</nz-form-item>
 			<nz-form-item>
@@ -27,32 +27,33 @@
 		<h2>Payment Information</h2>
 		<form nz-form [formGroup]="paymentInformation">
 			<nz-form-item>
-				<nz-form-label [nzSm]="6" [nzXs]="24" nzFor="creditcard">Card Information</nz-form-label>
+				<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="creditcard">Card Information</nz-form-label>
 				<nz-form-control [nzSm]="14" [nzXs]="24">
-					<input nz-input id="creditcard" formControlName="creditCardInformation" />
+					<input nz-input id="creditcard" formControlName="creditCardInformation" required />
         </nz-form-control>
 			</nz-form-item>
 
 			<nz-form-item>
-				<nz-row [nzGutter]="8">
+				<nz-row [nzGutter]="2">
 					<nz-col [nzSpan]="12">
-						<nz-form-label [nzSm]="6" [nzXs]="12" nzFor="cc-expirationdate">Expiration Date</nz-form-label>
-						<nz-form-control [nzSm]="4" [nzXs]="4">
-							<input nz-input id="cc-expirationdate" formControlName="expirationName" />
+						<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="cc-expirationdate">Expiration Date</nz-form-label>
+						<nz-form-control [nzSm]="6" [nzXs]="24">
+							<input nz-input id="cc-expirationdate" formControlName="expirationName" required/>
         </nz-form-control>
 					</nz-col>
 
 					<nz-col [nzSpan]="12">
-						<nz-form-label [nzSm]="6" [nzXs]="12" nzFor="cc-pin">Pin Code</nz-form-label>
-						<nz-form-control [nzSm]="4" [nzXs]="4">
-							<input nz-input id="cc-pin" formControlName="pinCode" />
-        </nz-form-control>
+						<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="cc-pin">Pin Code</nz-form-label>
+						<nz-form-control [nzSm]="4" [nzXs]="8">
+							<input nz-input id="cc-pin" formControlName="pinCode" required />
+          </nz-form-control>
 					</nz-col>
 				</nz-row>
 			</nz-form-item>
 		</form>
-
-  <button (click)="handleSubmit(customerInformation.value)">Purchase</button>
+		<p>Form 1 Status: {{ customerInformation.status }}</p>
+    <p>Form 2 Status: {{ paymentInformation.status }}</p>
+		<button nzButton nzType="primary" (click)="handleSubmit(customerInformation.value)">Purchase</button>
 	</div>
 	<!-- <div nz-col nzSpan="12">col-12</div> -->
 </div>

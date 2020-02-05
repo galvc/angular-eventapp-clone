@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../events.service';
 import { FormGroup, FormControl } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 
 @Component({
@@ -10,13 +11,13 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class CheckoutComponent implements OnInit {
   customerInformation = new FormGroup({
-    name: new FormControl(''),
+    name: new FormControl('', Validators.required),
     email: new FormControl(''),
     address: new FormControl('')
   })
 
   paymentInformation = new FormGroup({
-    creditCardInformation: new FormControl(''),
+    creditCardInformation: new FormControl('', Validators.required),
     expirationDate: new FormControl(''),
     pinCode: new FormControl('')
   })
