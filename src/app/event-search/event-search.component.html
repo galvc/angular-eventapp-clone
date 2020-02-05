@@ -1,0 +1,37 @@
+<div nz-row>
+	<div class="example-input" nz-col nzSpan="12">
+		<input
+        #searchBox
+        id="search-box"
+        placeholder="Search for an event"
+        nz-input
+        (input)="search(searchBox.value)"
+        [nzAutocomplete]="auto"
+        nzSize="large"
+      />
+		<nz-autocomplete nzBackfill #auto>
+			<nz-auto-option *ngFor="let event of events$ | async" [nzValue]="event">
+				<a routerLink="/events/{{event.id}}">
+					{{event.title}}
+				</a>
+			</nz-auto-option>
+		</nz-autocomplete>
+	</div>
+</div>
+
+
+
+
+<div id="search-component">
+	<h4><label for="search-box">Hero Search</label></h4>
+
+	<input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+	<ul class="search-result">
+		<li *ngFor="let event of events$ | async">
+			<a routerLink="/events/{{event.id}}">
+				{{event.title}}
+			</a>
+		</li>
+	</ul>
+</div>

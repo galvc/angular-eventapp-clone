@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 
 import { Event } from "./event";
+import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable({
   providedIn: "root"
@@ -24,14 +25,13 @@ export class EventsService {
   };
   constructor(private http: HttpClient) {}
 
-  getAllEvents (): Observable<Event[]> {
+  getAllEvents(): Observable<Event[]> {
     // return this.http.get('https://samplewebappi.azurewebsites.net/api/todoitems');
     // return this.http.get('assets/mock-events.json');
     return this.http.get<Event[]>(this.eventsUrl);
   }
 
   getEvent(id: number): Observable<Event> {
-    console.log(id)
     const url = `${this.eventsUrl}/${id}`;
     return this.http.get<Event>(url);
   }
@@ -40,7 +40,17 @@ export class EventsService {
     return this.http.put(this.eventsUrl, event, this.httpOptions);
   }
 
-
+  searchEvent(term: string): Observable<Event[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+    console.log("service searching");
+    return this.http.get<Event[]>(`${this.eventsUrl}/?title=${term}`)
+    // .pipe(
+    //   tap(_ => console.log("searching")),
+    //   catchError(this.handleError<Event[]>("searchEvent", []))
+    // );
+  }
 
   addToOrder(event, quantity) {
     this.order.event = event;
@@ -52,5 +62,14 @@ export class EventsService {
 
   getOrder() {
     return this.order;
+  }
+
+  private handleError<T>(operation = "operation", result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
   }
 }

@@ -1,8 +1,10 @@
+
+<app-event-search></app-event-search>
 <div nz-row nzType="flex" nzJustify="start">
 	<ng-container *ngFor="let event of events; index as eventId">
-			<a [routerLink]="['/events', eventId]">
-				<app-event-box [event]="event">
-				</app-event-box>
-			</a>
+		<a [routerLink]="['/events', eventId]">
+			<app-event-box [event]="event">
+			</app-event-box>
+		</a>
 	</ng-container>
 </div>

@@ -23,6 +23,7 @@ import { EventsService } from "./events.service";
 import { EventDetailsComponent } from "./event-details/event-details.component";
 import { CheckoutComponent } from "./checkout/checkout.component";
 import { InMemoryDataService } from './in-memory-data.service';
+import { EventSearchComponent } from './event-search/event-search.component';
 
 @NgModule({
   imports: [
@@ -47,7 +48,8 @@ import { InMemoryDataService } from './in-memory-data.service';
     EventsComponent,
     EventBoxComponent,
     EventDetailsComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    EventSearchComponent
   ],
   bootstrap: [AppComponent],
   providers: [EventsService, { provide: NZ_I18N, useValue: en_US, providers: [InMemoryDataService] }]
