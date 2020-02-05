@@ -22,7 +22,6 @@ import { EventBoxComponent } from "./event-box/event-box.component";
 import { EventsService } from "./events.service";
 import { EventDetailsComponent } from "./event-details/event-details.component";
 import { CheckoutComponent } from "./checkout/checkout.component";
-import { InMemoryDataService } from './in-memory-data.service';
 import { EventSearchComponent } from './event-search/event-search.component';
 
 @NgModule({
