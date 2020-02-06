@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../events.service';
-import { FormGroup, FormControl } from '@angular/forms';
 import { Event } from '../event';
+import { FormGroup, FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-add-event',
@@ -30,7 +31,9 @@ export class AddEventComponent implements OnInit {
     // console.log(this.form.value)
     // let value = this.form.value;
     this.eventsService.addEvent(value as Event).subscribe(
-      data => {}
+      data => { alert(`Event ${data.title} has been added`)
+      this.form.reset()
+      }
     )
   }
 

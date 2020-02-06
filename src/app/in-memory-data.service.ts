@@ -81,6 +81,18 @@ export class InMemoryDataService implements InMemoryDbService {
           "Connect with 50 Walla Walla Valley wineries and winemakers and sample, side-by-side, the wine crafted from the unique growing sites of the Walla Walla Valley AVA and surrounding areas.",
         location: "McCaw Hall",
         organizers: ["Walla Walla Wine Valley Association"]
+      },
+      {
+        id: 7,
+        title: "Sample event you can delete",
+        date: "02-10-2020",
+        time: "5:30pm",
+        price: 50.0,
+        quantity: 150,
+        description:
+          "You can delete me so yu know the api works.",
+        location: "McCaw Hall",
+        organizers: ["Me"]
       }
     ];
     return { events };

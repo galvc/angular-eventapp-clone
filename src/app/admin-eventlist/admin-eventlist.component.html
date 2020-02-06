@@ -1,0 +1,25 @@
+<nz-table #adminTable [nzData]="events">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Title</th>
+			<th>Date</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let event of events">
+			<td>{{ event.id }}</td>
+			<td>{{ event.title }}</td>
+			<td>{{ event.date }}</td>
+			<td>
+				<a disabled>Edit</a>
+				<nz-divider nzType="vertical"></nz-divider>
+				<a (click)="deleteEvent(event)" *ngIf="event.id > 6; else deleteAction">Delete</a>
+				<ng-template #deleteAction>
+					<a disabled>Delete</a>
+				</ng-template>
+			</td>
+		</tr>
+	</tbody>
+</nz-table>

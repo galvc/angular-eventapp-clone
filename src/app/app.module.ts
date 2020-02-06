@@ -25,6 +25,7 @@ import { CheckoutComponent } from "./checkout/checkout.component";
 import { EventSearchComponent } from './event-search/event-search.component';
 import { AdminComponent } from './admin/admin.component';
 import { AddEventComponent } from './add-event/add-event.component';
+import { AdminEventlistComponent } from './admin-eventlist/admin-eventlist.component';
 
 @NgModule({
   imports: [
@@ -52,7 +53,8 @@ import { AddEventComponent } from './add-event/add-event.component';
     CheckoutComponent,
     EventSearchComponent,
     AdminComponent,
-    AddEventComponent
+    AddEventComponent,
+    AdminEventlistComponent
   ],
   bootstrap: [AppComponent],
   providers: [EventsService, { provide: NZ_I18N, useValue: en_US, providers: [InMemoryDataService] }]
