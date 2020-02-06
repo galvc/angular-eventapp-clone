@@ -11,7 +11,6 @@ import { Event } from '../event';
 export class AddEventComponent implements OnInit {
 
   form = new FormGroup({
-    id: new FormControl(''),
     title: new FormControl(''),
     date: new FormControl(''),
     time: new FormControl(''),
@@ -30,8 +29,8 @@ export class AddEventComponent implements OnInit {
   handleSubmit() {
     console.log(this.form.value)
     let value = this.form.value;
-    this.eventsService.addEvent({value} as Event).subscribe(
-      
+    this.eventsService.addEvent(value as Event).subscribe(
+      data => {}
     )
   }
 

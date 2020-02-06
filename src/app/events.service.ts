@@ -52,8 +52,8 @@ export class EventsService {
     // );
   }
 
-  addEvent (event: Event): Observable<Event> {
-  return this.http.post<Event>(this.eventsUrl, event, this.httpOptions)
+  addEvent (event): Observable<Event> {
+    return this.http.post<any>(this.eventsUrl, event, this.httpOptions)
   }
 
   addToOrder(event, quantity) {
