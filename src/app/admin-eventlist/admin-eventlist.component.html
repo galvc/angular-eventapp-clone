@@ -15,7 +15,7 @@
 			<td>
 				<a disabled>Edit</a>
 				<nz-divider nzType="vertical"></nz-divider>
-				<a (click)="deleteEvent(event)" *ngIf="event.id > 6; else deleteAction">Delete</a>
+				<a (click)="eventToDelete.emit(event)" *ngIf="event.id > 6; else deleteAction">Delete</a>
 				<ng-template #deleteAction>
 					<a disabled>Delete</a>
 				</ng-template>

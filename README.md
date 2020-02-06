@@ -17,7 +17,9 @@ but for now i used an onclick instead of an onsubmit since the button is outside
 - i wasnt able to get the online api out on time, so i will just simulate the server using inmemorydb
 - when searching user has to click on text itself
 - cannot search by title, input is useless unless you click on the actual text result 
-
+- i need admin table to refresh after deleting an event
+ive  moved the delete methods away ffrom the table and into the admin page, the delete button just emits an event when clicked
+now im thinking maybe i should just input the event array into the table so that the parent can refresh the table?????
 ## notes
 FormControl - access to listen update validate form inputs
 - associate with a form item and bind it, ex. - [formControl]="x"

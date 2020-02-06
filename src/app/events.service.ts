@@ -45,17 +45,18 @@ export class EventsService {
       return of([]);
     }
     console.log("service searching");
-    return this.http.get<Event[]>(`${this.eventsUrl}/?title=${term}`)
-    // .pipe(
-    //   tap(_ => console.log("searching")),
-    //   catchError(this.handleError<Event[]>("searchEvent", []))
-    // );
+    return this.http.get<Event[]>(`${this.eventsUrl}/?title=${term}`);
   }
 
-  addEvent (event): Observable<Event> {
-    return this.http.post<any>(this.eventsUrl, event, this.httpOptions)
+  addEvent(event): Observable<Event> {
+    return this.http.post<any>(this.eventsUrl, event, this.httpOptions);
   }
 
+  deleteEvent(eventId: number): Observable<Event> {
+    // const id = typeof hero === "number" ? hero : hero.id;
+    const url = `${this.eventsUrl}/${eventId}`;
+    return this.http.delete<Event>(url, this.httpOptions);
+  }
   addToOrder(event, quantity) {
     this.order.event = event;
     this.order.quantity = quantity;
