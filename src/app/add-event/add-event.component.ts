@@ -26,9 +26,9 @@ export class AddEventComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleSubmit() {
-    console.log(this.form.value)
-    let value = this.form.value;
+  handleSubmit(value) {
+    // console.log(this.form.value)
+    // let value = this.form.value;
     this.eventsService.addEvent(value as Event).subscribe(
       data => {}
     )

@@ -1,27 +1,55 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="handleSubmit(form.value)">
+	<!-- put handle submit up here -->
+	<nz-form-item>
+		<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">Title</nz-form-label>
+		<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid title!">
+			<input nz-input formControlName="title" id="title" />
+        </nz-form-control>
+	</nz-form-item>
+	<nz-form-item>
+		<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="description">Description</nz-form-label>
+		<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid description!">
+			<textarea nz-input formControlName="description" id="description"></textarea>
+		</nz-form-control>
+	</nz-form-item>
+	<nz-form-item>
+		<nz-form-label [nzSm]="8" [nzXs]="24" nzRequired>Date</nz-form-label>
+		<nz-form-control [nzSm]="16" [nzXs]="24">
+			<nz-date-picker formControlName="date"></nz-date-picker>
+		</nz-form-control>
+	</nz-form-item>
 
-	<label>Title</label>
-	<input type="text" placeholder="" formControlName="title"/>
-	<br/>
-	<label>Description</label>
-	<input type="text" placeholder="" formControlName="description" />
-	<br/>
-	<label>Date</label>
-	<input type="text" placeholder="" formControlName="date"/>
-	<br/>
-	<label>Time</label>
-	<input type="text" placeholder="" formControlName="time"/>
-	<br/>
-	<label>Price</label>
-	<input type="number" placeholder="" formControlName="price"/>
-	<br/>
-	<label>Quantity</label>
-	<input type="number" placeholder="" formControlName="quantity"/>
-	<br/>
-	<label>Location</label>
-	<input type="text" placeholder="" formControlName="location"/>
-	<br/>
-	<label>Organizers</label>
-	<input type="text" placeholder="" formControlName="organizers"/>
-	<button type="submit" (click)="handleSubmit()">Submit</button>
+	<nz-form-item>
+		<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="time">Time</nz-form-label>
+		<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid time!">
+			<input nz-input formControlName="time" id="time" />
+        </nz-form-control>
+	</nz-form-item>
+
+	<nz-form-item>
+		<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="price">Price</nz-form-label>
+		<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid price!">
+			<nz-input-number [nzMin]="1" [nzMax]="100" [nzStep]="1" formControlName="price"></nz-input-number>
+		</nz-form-control>
+	</nz-form-item>
+	<nz-form-item>
+		<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="price">Quantity</nz-form-label>
+		<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid quantity!">
+			<nz-input-number [nzMin]="1" [nzMax]="100" [nzStep]="1" formControlName="quantity"></nz-input-number>
+		</nz-form-control>
+	</nz-form-item>
+	<nz-form-item>
+		<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="location">Location</nz-form-label>
+		<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid location!">
+			<input nz-input formControlName="location" id="location" />
+        </nz-form-control>
+	</nz-form-item>
+
+	<nz-form-item>
+		<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="organizers">Organizers</nz-form-label>
+		<nz-form-control [nzSm]="14" [nzXs]="24" nzErrorTip="The input is not valid organizers!">
+			<input nz-input formControlName="organizers" id="organizers" />
+        </nz-form-control>
+	</nz-form-item>
+	<button nz-button nzType="primary" type="submit">Submit</button>
 </form>

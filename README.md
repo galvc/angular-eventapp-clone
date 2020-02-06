@@ -17,6 +17,7 @@ but for now i used an onclick instead of an onsubmit since the button is outside
 - i wasnt able to get the online api out on time, so i will just simulate the server using inmemorydb
 - when searching user has to click on text itself
 - cannot search by title, input is useless unless you click on the actual text result 
+
 ## notes
 FormControl - access to listen update validate form inputs
 - associate with a form item and bind it, ex. - [formControl]="x"
@@ -37,6 +38,11 @@ import reactiveformmodule to app.module
 Every Subject is an Observable and an Observer. You can subscribe to a Subject, and you can call next to feed values as well as error and complete.
 https://rxjs-dev.firebaseapp.com/api/index/class/Subjects
 - the id of each evenr wil not match up to the array id, keep in mind esp for routerlinks
+- so add event wouldnt work because of this in the add event component
+this.eventsservice.addevent({value} as Event)
+I copied this code from the angular tutorials but what happens is that value from the form is turned into an object before getting passed into service
+in the original tutorial, the value was a string. since the form is already formatted, when it gets added to the api, it is wrapped again as an object with the id outside of the value ex: {{title, date, etc} id}
+the fix is just to remove the brackets and also removing the id form input
 
 #todos
 - [x] add price
@@ -46,15 +52,18 @@ https://rxjs-dev.firebaseapp.com/api/index/class/Subjects
 - [x] add checkout page
 - [ ] create and host the web api 
 - [ ] bonus: add cart
-- [ ] bonus: add an admin page
+- [x] bonus: add an admin page
 - [x] move back to http api
 - [ ] check for ticket quantity & allowing for more than one tix purchase
 - [x] purchase button disabled until dropdown has changed
 - [ ] form validation 
-- [ ] confirm email input addition, comparing two input field validation
+- [ ] confirm email input, validating both inputs
+- [ ] organizers input is taken as one string -> turn into an array of strings
 - [ ] responsive webpage
 - [ ] update quantity when it is 'bought'
 - [x] search component
 - [x] add http methods
-- [ ] fix search: entire row should be clickable
+- [ ] fix search: entire row result should be clickable
 - [ ] fix search: search even without clicking the result
+- [ ] add sample event button for demo convenience
+- [ ] delete event
