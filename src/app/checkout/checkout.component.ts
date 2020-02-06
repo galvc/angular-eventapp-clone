@@ -30,8 +30,10 @@ export class CheckoutComponent implements OnInit {
     this.order = this.eventsService.getOrder();
   }
 
-  handleSubmit(data1) {
-    console.warn(data1);
+// param is value of form
+  handleSubmit(data) {
+    console.warn(data);
+    alert('thanks for your purchase')
   }
 
   cancel(): void {
