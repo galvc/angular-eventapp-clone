@@ -8,7 +8,7 @@ import { Event } from "../event";
   styleUrls: ["./admin-eventlist.component.css"]
 })
 export class AdminEventlistComponent implements OnInit {
-  // events: Event[];
+  
   @Input() events;
   @Output() eventToDelete = new EventEmitter<Event>();
   constructor(private eventsService: EventsService) {}

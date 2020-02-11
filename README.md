@@ -20,6 +20,7 @@ but for now i used an onclick instead of an onsubmit since the button is outside
 - i need admin table to refresh after deleting an event
 ive  moved the delete methods away ffrom the table and into the admin page, the delete button just emits an event when clicked
 now im thinking maybe i should just input the event array into the table so that the parent can refresh the table?????
+
 ## notes
 FormControl - access to listen update validate form inputs
 - associate with a form item and bind it, ex. - [formControl]="x"
@@ -46,6 +47,9 @@ I copied this code from the angular tutorials but what happens is that value fro
 in the original tutorial, the value was a string. since the form is already formatted, when it gets added to the api, it is wrapped again as an object with the id outside of the value ex: {{title, date, etc} id}
 the fix is just to remove the brackets and also removing the id form input
 
+- took me so. damn. long. to figure out
+when passing a value through eventemitter
+in the parenthtml, parentmethod must ALWAYS be ($event) otherwise it wont damn work
 #todos
 - [x] add price
 - [x] add quantity
@@ -69,3 +73,6 @@ the fix is just to remove the brackets and also removing the id form input
 - [ ] fix search: search even without clicking the result
 - [ ] add sample event button for demo convenience
 - [ ] delete event
+- [ ] format the time when event is added
+- [ ] close the add event form when done
+- [ ] move the addevent method to the admin parent component

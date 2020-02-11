@@ -49,6 +49,7 @@ export class EventsService {
   }
 
   addEvent(event): Observable<Event> {
+    console.log('adding event from services' + event)
     return this.http.post<any>(this.eventsUrl, event, this.httpOptions);
   }
 

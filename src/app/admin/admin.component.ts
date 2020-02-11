@@ -8,10 +8,19 @@ import { EventsService } from "../events.service";
 })
 export class AdminComponent implements OnInit {
   constructor(private eventsService: EventsService) {}
-  @Input() events;
+  events;
   addFormShow: boolean = false;
+
   ngOnInit() {
     this.getEvents();
+  }
+
+  addEvent(value) {
+    console.log('admin component' + value)
+    this.eventsService.addEvent(value).subscribe(data => {
+      console.log('adding vent' + JSON.stringify(data))
+      alert(`Event ${data.title} has been added`);
+    });
   }
 
   getEvents() {

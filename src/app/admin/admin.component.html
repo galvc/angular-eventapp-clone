@@ -1,4 +1,4 @@
 <button nz-button nzType="primary" (click)="displayAddForm()">Add an event</button>
 
 <app-admin-eventlist [events]="events" (eventToDelete)="deleteEvent($event)"></app-admin-eventlist>
-<app-add-event *ngIf="addFormShow"></app-add-event>
+<app-add-event *ngIf="addFormShow" (newEvent)="addEvent($event)"></app-add-event>

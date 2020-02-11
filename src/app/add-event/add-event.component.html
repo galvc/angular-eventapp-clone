@@ -1,5 +1,5 @@
 <h1>Add an event</h1>
-<form [formGroup]="form" (ngSubmit)="handleSubmit(form.value); form.value=''">
+<form [formGroup]="form" (ngSubmit)="handleSubmit()">
 	<!-- put handle submit up here -->
 	<nz-form-item>
 		<nz-form-label [nzSm]="6" [nzXs]="24" nzRequired nzFor="title">Title</nz-form-label>

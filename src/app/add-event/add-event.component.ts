@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { EventsService } from '../events.service';
 import { Event } from '../event';
 import { FormGroup, FormControl } from '@angular/forms';
@@ -10,6 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./add-event.component.css']
 })
 export class AddEventComponent implements OnInit {
+  @Output() newEvent = new EventEmitter<any>();
 
   form = new FormGroup({
     title: new FormControl(''),
@@ -27,14 +28,10 @@ export class AddEventComponent implements OnInit {
   ngOnInit() {
   }
 
-  handleSubmit(value) {
-    // console.log(this.form.value)
-    // let value = this.form.value;
-    this.eventsService.addEvent(value as Event).subscribe(
-      data => { alert(`Event ${data.title} has been added`)
-      this.form.reset()
-      }
-    )
+  handleSubmit() {
+    this.newEvent.emit(this.form.value);
+    console.log('handle submit' + JSON.stringify(this.form.value))
+    this.form.reset();
   }
 
 }
