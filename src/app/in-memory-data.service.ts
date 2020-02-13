@@ -7,9 +7,8 @@ import { Event } from "./event";
   providedIn: "root"
 })
 export class InMemoryDataService implements InMemoryDbService {
-
   createDb() {
-     const events = [
+    const events = [
       {
         id: 1,
         title: "Seattle Bacon and Beer",
@@ -89,12 +88,19 @@ export class InMemoryDataService implements InMemoryDbService {
         time: "5:30pm",
         price: 50.0,
         quantity: 150,
-        description:
-          "You can delete me so yu know the api works.",
+        description: "You can delete me so yu know the api works.",
         location: "McCaw Hall",
         organizers: ["Me"]
       }
     ];
-    return { events };
+
+    const user = {
+      username: "john000",
+      firstname: "John",
+      lastname: "doe",
+      email: "john_doe000@email.com",
+      password: "mighty000"
+    };
+    return { events, user };
   }
 }

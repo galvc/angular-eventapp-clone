@@ -26,6 +26,10 @@ import { EventSearchComponent } from './event-search/event-search.component';
 import { AdminComponent } from './admin/admin.component';
 import { AddEventComponent } from './add-event/add-event.component';
 import { AdminEventlistComponent } from './admin-eventlist/admin-eventlist.component';
+import { CartComponent } from './cart/cart.component';
+import { CartService } from './cart.service';
+import { SigninComponent } from './signin/signin.component';
+import { UserService } from './user.service';
 
 @NgModule({
   imports: [
@@ -54,9 +58,11 @@ import { AdminEventlistComponent } from './admin-eventlist/admin-eventlist.compo
     EventSearchComponent,
     AdminComponent,
     AddEventComponent,
-    AdminEventlistComponent
+    AdminEventlistComponent,
+    CartComponent,
+    SigninComponent
   ],
   bootstrap: [AppComponent],
-  providers: [EventsService, { provide: NZ_I18N, useValue: en_US, providers: [InMemoryDataService] }]
+  providers: [EventsService, { provide: NZ_I18N, useValue: en_US, providers: [InMemoryDataService], providers: [CartService], providers: [UserService] }]
 })
 export class AppModule {}
