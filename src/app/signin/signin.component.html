@@ -1,6 +1,29 @@
-<p>
-  <strong>Username</strong>: {{ user.username }}
-  <br />
-  <strong>First name</strong>: {{ user.firstname }}
+<div>
+	<h1> Sign in </h1>
+	<p>Hi John, please enter your password to sign in. </p>
+	<!-- <form>
+		<input type="password" name="password" />
+		<button nz-button nzType="primary" type="submit">Primary</button>
+	</form> -->
   
-</p>
+	<form nz-form [nzLayout]="'inline'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
+    
+		<nz-form-item>
+			<nz-form-control nzErrorTip="Please input your Password!">
+					<input formControlName="password" nz-input type="password" placeholder="Password" />
+			</nz-form-control>
+		</nz-form-item>
+		<nz-form-item>
+			<nz-form-control>
+				<button nz-button nzType="primary">Log in</button>
+        <!-- <button nz-button nzType="primary" [disabled]="!validateForm.valid">Log in</button> -->
+			</nz-form-control>
+		</nz-form-item>
+	</form>
+</div>
+
+<!-- <p>
+	<strong>Username</strong>: {{ user.username }}
+	<br />
+	<strong>First name</strong>: {{ user.firstname }}
+</p> -->

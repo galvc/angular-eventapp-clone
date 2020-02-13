@@ -72,7 +72,11 @@ in the parenthtml, parentmethod must ALWAYS be ($event) otherwise it wont damn w
 - [ ] fix search: entire row result should be clickable
 - [ ] fix search: search even without clicking the result
 - [ ] add sample event button for demo convenience
-- [ ] delete event
+- [x] delete event
 - [ ] format the time when event is added
-- [ ] close the add event form when done
-- [ ] move the addevent method to the admin parent component
+- [x] close the add event form when done
+- [x] move the addevent method to the admin parent component
+- [ ] add user
+- [ ] add sign in page with password validation
+- [ ] bonus: signin page for admin & user
+- [ ] bonus: create a new user/sign up page
