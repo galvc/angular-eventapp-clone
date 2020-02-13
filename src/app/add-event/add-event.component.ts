@@ -30,7 +30,6 @@ export class AddEventComponent implements OnInit {
 
   handleSubmit() {
     this.newEvent.emit(this.form.value);
-    console.log('handle submit' + JSON.stringify(this.form.value))
     this.form.reset();
   }
 

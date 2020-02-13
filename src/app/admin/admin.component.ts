@@ -16,10 +16,9 @@ export class AdminComponent implements OnInit {
   }
 
   addEvent(value) {
-    console.log('admin component' + value)
     this.eventsService.addEvent(value).subscribe(data => {
-      console.log('adding vent' + JSON.stringify(data))
       alert(`Event ${data.title} has been added`);
+      this.displayAddForm();
     });
   }
 
