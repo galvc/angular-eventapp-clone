@@ -1,10 +1,6 @@
 <div>
 	<h1> Sign in </h1>
 	<p>Hi John, please enter your password to sign in. </p>
-	<!-- <form>
-		<input type="password" name="password" />
-		<button nz-button nzType="primary" type="submit">Primary</button>
-	</form> -->
   
 	<form nz-form [nzLayout]="'inline'" [formGroup]="validateForm" (ngSubmit)="submitForm()">
     
@@ -22,8 +18,9 @@
 	</form>
 </div>
 
-<!-- <p>
-	<strong>Username</strong>: {{ user.username }}
-	<br />
-	<strong>First name</strong>: {{ user.firstname }}
-</p> -->
+<div>
+  <strong>User:<strong> {{ user.username }}
+    <br />
+  <strong>Email:</strong> {{ user.email }}
+  <br />
+  <strong>Saved events:</strong> {{ user.savedEvents }}

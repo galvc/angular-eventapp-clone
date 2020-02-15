@@ -99,7 +99,8 @@ export class InMemoryDataService implements InMemoryDbService {
       firstname: "John",
       lastname: "doe",
       email: "john_doe000@email.com",
-      password: "mighty000"
+      password: "mighty000",
+      savedEvents: [],
     };
     return { events, user };
   }

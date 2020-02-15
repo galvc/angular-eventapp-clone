@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class SigninComponent implements OnInit {
   user; 
+  savedEvents: number[];
 
   constructor(private userService: UserService) { }
 
